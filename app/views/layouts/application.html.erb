@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Poemapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <header>
+      <ul>
+        <li><a href="https://rubyonrails-ver2-yuya0569.c9users.io/poems">Twitter Crone</a></li>
+        <li><a href="https://rubyonrails-ver2-yuya0569.c9users.io/poems">Home</a></li>
+        <li><a href="https://rubyonrails-ver2-yuya0569.c9users.io/poems/new">+</a></li>
+      </ul>
+    </header>
+    
+    <%= yield %>
+    
+    <footer>
+      <p>yuya miyamoto</p>
+      <p>© 2018 Copyright yuya miyamoto</p>
+    </footer>
+  </body>
+</html>

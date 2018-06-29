@@ -1,0 +1,30 @@
+
+<div class="container">
+    
+  <div class="row">
+    <%= form_with(model: @poem, local: true ,url: choose_new_or_edit) do |form| %>
+      <div class="new_tweet">
+        <%= form.label :new_tweet %><br>
+        <%= form.text_field :content %>
+        <br>
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+      <% @poems.each do |poem| %>
+        <div class="tweets">
+          <h2><%= poem.content %></h2>
+          <p><%= poem.created_at %></h>
+          
+          <div class="tweet_link">
+            <tr>
+              <th><%= link_to "編集", edit_poem_path(poem.id), class: 'btn btn-danger' %></th>
+              <th><%= link_to '削除', poem_path(poem.id), class: 'btn btn-danger', method: :delete ,data: { confirm: '本当に削除していいですか？' } %></th>
+            </tr>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<h3>New Tweet Below?</h3>
+
+<%= form_with(model: @poem, url: poems_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+
+  <p>本文:<%= @poem.content %></p>
+  <%= form.submit  "OK" %>
+<% end %>
+
+<%= form_with(model: @poem, url: new_poem_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "No!", name: 'back' %>
+<% end %>
