@@ -14,11 +14,11 @@
 
   <div class="row">
       <% @poems.each do |poem| %>
-        <div class="col-md-6 col-xs-12">
+        <div class="tweets">
           <h2><%= poem.content %></h2>
-          <p><%= poem.created_at %></p>
+          <p><%= poem.created_at %></h>
           
-          <div>
+          <div class="tweet_link">
             <tr>
               <th><%= link_to "編集", edit_poem_path(poem.id), class: 'btn btn-danger' %></th>
               <th><%= link_to '削除', poem_path(poem.id), class: 'btn btn-danger', method: :delete ,data: { confirm: '本当に削除していいですか？' } %></th>
