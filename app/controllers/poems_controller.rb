@@ -1,5 +1,8 @@
 class PoemsController < ApplicationController
   before_action :set_poem, only: [:show, :edit, :update, :destroy]
+  
+  def home
+  end
     
   def index
     @poems = Poem.all.order('created_at desc')
